@@ -1,0 +1,13 @@
+import cv2
+
+image = cv2.imread("C:/Users/Kamal/Downloads/sunflower.jpg")
+
+if image is None:
+    raise FileNotFoundError("Could not load the image. Check the file path.")
+
+blurred_image = cv2.GaussianBlur(image, (15, 15), 0)
+
+cv2.imshow("Original Image", image)
+cv2.imshow("Blurred Image", blurred_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
