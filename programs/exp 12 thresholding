@@ -1,0 +1,24 @@
+
+import cv2
+
+# Read the image
+image = cv2.imread("C:/Users/Kamal/Downloads/sunflower.jpg")
+
+if image is None:
+    print("Image not found!")
+else:
+    # Flip the image along Y-axis
+    flipped_image = cv2.flip(image, 1)
+
+    # Rotate 90 degrees counterclockwise (270 degrees clockwise)
+    rotated_image = cv2.rotate(flipped_image, cv2.ROTATE_90_COUNTERCLOCKWISE)
+
+    # Display images
+    cv2.imshow("Original Image", image)
+    cv2.imshow("Rotated 270-degree Clockwise Image", rotated_image)
+
+    # Save the output image
+    cv2.imwrite("C:/Users/Kamal/Downloads/rotated_image_270.jpg", rotated_image)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
